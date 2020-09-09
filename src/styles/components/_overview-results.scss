@@ -1,0 +1,98 @@
+.overview-results {
+  &-box {
+    position: relative;
+    flex-basis: 21%;
+    border: $spacing-secondary solid;
+    border-radius: $border-radius-card;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: $spacing-sm $spacing-xs;
+    margin: $spacing-xxs;
+    @include applyTheme() {
+      background-color: theme($card-bg);
+    }
+  }
+  &-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: $spacing-xs $spacing-sm;
+    margin: 0 auto;
+  }
+
+  &-overall {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: $spacing-xs $spacing-sm;
+    text-align: center;
+
+    h5 {
+      padding: 0 $spacing-sm;
+      font-size: $font-size-md;
+      font-weight: $inter-bold;
+      @include applyTheme() {
+        color: theme($normal-txt);
+      }
+    }
+    p {
+      padding: 0 $spacing-sm;
+      font-size: $font-size-xl;
+      font-weight: $inter-bold;
+      @include applyTheme() {
+        color: theme($highlighted-txt);
+      }
+    }
+  }
+  &-icons {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.5;
+    margin-left: $spacing-def;
+  }
+  &-indicators {
+    display: inline-block;
+    font-size: $font-size-md;
+    font-weight: $inter-bold;
+    text-align: center;
+    margin-left: $spacing-def;
+  }
+  @media (min-width: 320px) and (max-width: 479px) {
+    flex-basis: 98%;
+  }
+  @media (min-width: 480px) and (max-width: 575px) {
+    flex-basis: 48%;
+  }
+  @media (min-width: 576px) and (max-width: 727px) {
+    flex-basis: 32%;
+  }
+  @media (min-width: 728px) {
+    flex-basis: 21%;
+  }
+}
+
+.facebook-box {
+  border-color: $facebook;
+}
+
+.instagram-box {
+  @include applyTheme() {
+    border-color: theme($instagram-border);
+  }
+}
+
+.twitter-box {
+  border-color: $twitter;
+}
+
+.youtube-box {
+  border-color: $youtube;
+}

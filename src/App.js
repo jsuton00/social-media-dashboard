@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TotalStatusRow from './components/TotalStatus';
+import OverViewStatusRow from './components/OverViewStatusRow';
+import Navigation from './components/Navigation';
+import { totalStats, overViewStats } from './utils/appData.js';
 
 function App() {
+  const [dark, setDark] = useState(false);
+  const changeThemeHandler = () => setDark(!dark);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div id="app" className={`theme ${dark ? 'theme-dark' : 'theme-default'}`}>
+      <div id="dashboard" className="dashboard">
+        <header
+          id="dashboard-header"
+          className="dashboard-header container-fluid"
         >
-          Learn React
-        </a>
-      </header>
+          <Navigation changeTheme={changeThemeHandler} dark={dark} />
+        </header>
+        <main id="dashboard-base" className="dashboard-base container-fluid">
+          <TotalStatusRow totalResults={totalStats} />
+          <OverViewStatusRow overViewResults={overViewStats} />
+        </main>
+      </div>
     </div>
   );
 }

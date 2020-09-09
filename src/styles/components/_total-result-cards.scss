@@ -1,0 +1,120 @@
+.card {
+  flex-basis: 20%;
+  @include applyTheme() {
+    background-color: theme($card-bg);
+  }
+  &-header {
+    width: 100%;
+    p {
+      width: 100%;
+      height: 100%;
+      font-size: $font-size-base;
+      font-weight: $inter-bold;
+      text-align: center;
+      @include applyTheme() {
+        color: theme($normal-txt);
+      }
+    }
+  }
+  &-body {
+    width: 100%;
+    height: 100%;
+    h3,
+    p {
+      text-align: center;
+    }
+    h3 {
+      width: 100%;
+      height: 100%;
+      font-size: $font-size-xxl + 0.75vw;
+      font-weight: $inter-bold;
+      @include applyTheme() {
+        color: theme($highlighted-txt);
+      }
+    }
+    p {
+      width: 100%;
+      height: 100%;
+      font-size: $font-size-base + 0.25vw;
+      text-transform: uppercase;
+    }
+  }
+  &-footer {
+    width: 100%;
+    p {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-weight: $inter-bold;
+      span {
+        display: inline-block;
+        margin-right: $spacing-xxs;
+      }
+    }
+  }
+  @media (min-width: 320px) and (max-width: 379px) {
+    flex-basis: 90%;
+  }
+  @media (min-width: 380px) and (max-width: 479px) {
+    flex-basis: 90%;
+  }
+  @media (min-width: 480px) and (max-width: 639px) {
+    flex-basis: 90%;
+  }
+  @media (min-width: 640px) and (max-width: 727px) {
+    flex-basis: 45%;
+  }
+  @media (min-width: 728px) {
+    flex-basis: 20%;
+  }
+}
+
+.facebook-card {
+  border-top: $spacing-xxs solid $facebook;
+}
+
+.twitter-card {
+  border-top: $spacing-xxs solid $twitter;
+}
+
+.instagram-card {
+  border-top: $spacing-xxs solid;
+  @include applyTheme() {
+    border-top-color: theme($instagram-border);
+  }
+}
+
+.youtube-card {
+  border-top: $spacing-xxs solid $youtube;
+}
+
+.social-media {
+  display: inline-block;
+  margin-right: $spacing-xxs;
+}
+
+.facebook {
+  color: $facebook;
+}
+
+.twitter {
+  color: $twitter;
+}
+
+.instagram {
+  @include applyTheme() {
+    color: theme($instagram-border);
+  }
+}
+
+.youtube {
+  color: $youtube;
+}
+
+.positive {
+  color: $lime-green;
+}
+
+.negative {
+  color: $bright-red;
+}

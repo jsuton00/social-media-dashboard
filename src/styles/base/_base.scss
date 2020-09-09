@@ -1,0 +1,25 @@
+html,
+body,
+#root {
+  font-family: $inter;
+  font-size: $font-size-base;
+  font-weight: $inter-normal;
+  overflow-x: hidden;
+
+  @include applyTheme() {
+    color: theme($normal-txt);
+    background-color: theme($bg);
+  }
+}
+
+.theme {
+  width: 100%;
+  height: 100vh;
+}
+
+.dashboard {
+  @include applyTheme() {
+    color: theme($normal-txt);
+    background-color: theme($bg);
+  }
+}

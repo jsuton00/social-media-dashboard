@@ -1,0 +1,33 @@
+//font-settings
+//font-family
+$inter: 'Inter', sans-serif;
+
+//font-weights
+$inter-normal: 400;
+$inter-bold: 700;
+
+//font-sizes
+$font-size-base: 1.17vw;
+$font-size-xxs: 0.73vw;
+$font-size-xs: 0.81vw;
+$font-size-sm: 0.88vw;
+$font-size-md: 1.02vw;
+$font-size-lg: 1.46vw;
+$font-size-xl: 1.76vw;
+$font-size-xxl: 2.2vw;
+
+//spacing-settings
+$spacing-primary: 0.0625rem;
+$spacing-secondary: 0.125rem;
+$spacing-xxs: 0.25rem;
+$spacing-xs: 0.3125rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 0.75rem;
+$spacing-def: 1rem;
+$spacing-lg: 1.25rem;
+$spacing-xl: 1.5rem;
+$spacing-xxl: 2rem;
+
+//layout
+$header-height: 12.8vh;
+$border-radius-card: 0.25rem;
