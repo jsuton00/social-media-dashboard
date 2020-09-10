@@ -4,14 +4,12 @@
   width: 100%;
   height: 100%;
   padding: $spacing-xxs $spacing-sm;
-  &-total,
-  &-toggle {
+
+  &-total {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: $spacing-sm;
-  }
-  &-total {
     h1 {
       font-size: $font-size-xxl;
       font-weight: $inter-bold;
@@ -27,6 +25,10 @@
       }
     }
   }
+  &-toggle {
+    justify-content: center;
+    padding: $spacing-sm;
+  }
 }
 
 .theme-toggle-switch {
@@ -41,5 +43,43 @@
 
   span {
     margin-right: $spacing-xxs;
+  }
+}
+
+.logout-button {
+  border: none;
+  background-color: transparent;
+  font-size: $font-size-base;
+  font-weight: $inter-bold;
+  padding: $spacing-sm $spacing-def;
+  @include applyTheme() {
+    color: theme($highlighted-txt);
+  }
+}
+
+.login-nav {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: $spacing-xxs $spacing-sm;
+  &-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: $spacing-sm;
+
+    h1 {
+      font-size: $font-size-xl;
+      font-weight: $inter-bold;
+      padding: $spacing-secondary $spacing-sm;
+      @include applyTheme() {
+        color: theme($highlighted-txt);
+      }
+    }
+  }
+  &-toggle {
+    justify-content: center;
+    padding: $spacing-sm;
   }
 }

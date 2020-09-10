@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import TotalStatusRow from './components/TotalStatus';
-import OverViewStatusRow from './components/OverViewStatusRow';
-import Navigation from './components/Navigation';
-import { totalStats, overViewStats } from './utils/appData.js';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import LoginPage from './pages/LoginPage';
+import PrivateRoute from './pages/PrivateRoute';
 
 function App() {
   const [dark, setDark] = useState(false);
@@ -10,18 +10,15 @@ function App() {
 
   return (
     <div id="app" className={`theme ${dark ? 'theme-dark' : 'theme-default'}`}>
-      <div id="dashboard" className="dashboard">
-        <header
-          id="dashboard-header"
-          className="dashboard-header container-fluid"
-        >
-          <Navigation changeTheme={changeThemeHandler} dark={dark} />
-        </header>
-        <main id="dashboard-base" className="dashboard-base container-fluid">
-          <TotalStatusRow totalResults={totalStats} />
-          <OverViewStatusRow overViewResults={overViewStats} />
-        </main>
-      </div>
+      <Switch>
+        <Route exact path="/">
+          <LoginPage changeThemeHandler={changeThemeHandler} dark={dark} />
+        </Route>
+        <PrivateRoute path="/dashboard">
+          <Dashboard changeThemeHandler={changeThemeHandler} dark={dark} />
+        </PrivateRoute>
+        <Redirect to="/" />
+      </Switch>
     </div>
   );
 }

@@ -1,0 +1,110 @@
+.login-form-section {
+  width: 100%;
+  height: 100%;
+  padding: $spacing-def $spacing-xxl * 2 $spacing-xxl;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  border: $spacing-secondary solid;
+  border-radius: $spacing-xxs;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  min-height: 20rem;
+  height: 20rem;
+  max-height: 20rem;
+  padding: $spacing-def;
+  margin: 0 auto;
+  @include applyTheme() {
+    background-color: theme($card-bg);
+  }
+  &-header {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: $spacing-sm $spacing-def;
+  }
+  &-title {
+    width: 100%;
+    height: 100%;
+    padding: $spacing-sm $spacing-def;
+    text-align: center;
+    font-size: $font-size-xl;
+    font-weight: $inter-bold;
+    @include applyTheme() {
+      color: theme($normal-txt);
+    }
+  }
+  &-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: $spacing-xs $spacing-sm;
+    margin: $spacing-xxs 0;
+  }
+  &-control {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: $spacing-xs $spacing-sm;
+    margin: $spacing-xs auto;
+
+    input {
+      width: 100%;
+      height: 100%;
+      padding: $spacing-md $spacing-xl;
+      margin: $spacing-xs auto;
+      &::placeholder {
+        @include applyTheme() {
+          color: theme($normal-txt);
+          font-size: $font-size-base;
+          font-weight: $inter-bold;
+        }
+      }
+    }
+  }
+  &-footer {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: $spacing-xs $spacing-sm;
+    margin: $spacing-xs auto;
+
+    button {
+      width: 100%;
+      height: 100%;
+      font-size: $font-size-base;
+      font-weight: $inter-bold;
+      padding: $spacing-md $spacing-xxl;
+      background-color: $facebook;
+      border: $spacing-primary solid $facebook;
+      text-transform: uppercase;
+      @include applyTheme() {
+        color: theme($highlighted-txt);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $twitter;
+        border-color: $twitter;
+        outline: none;
+      }
+
+      span {
+        display: inline-block;
+        margin-left: $spacing-xxs;
+      }
+    }
+  }
+}
